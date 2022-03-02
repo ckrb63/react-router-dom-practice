@@ -1,6 +1,19 @@
-import ReactDOM from 'react-dom';
+import ReactDOM from "react-dom";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+import "./index.css";
+import App from "./App";
+import AllQoute from "./pages/AllQuote";
+import QuoteDetail from "./pages/QuoteDetail";
+import NewQoute from "./pages/NewQuote";
 
-import './index.css';
-import App from './App';
-
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Navigate replace to="/quotes" />} />
+      <Route path="/quotes" element={<AllQoute />} />
+      <Route path="/quotes/:quoteId" element={<QuoteDetail />} />
+      <Route path="/new-quote" element={<NewQoute />} />
+    </Routes>
+  </BrowserRouter>,
+  document.getElementById("root")
+);
