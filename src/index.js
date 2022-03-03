@@ -5,15 +5,6 @@ import App from "./App";
 import AllQoute from "./pages/AllQuote";
 import QuoteDetail from "./pages/QuoteDetail";
 import NewQoute from "./pages/NewQuote";
+import MainNavigation from "./components/layout/MainNavigation";
 
-ReactDOM.render(
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<Navigate replace to="/quotes" />} />
-      <Route path="/quotes" element={<AllQoute />} />
-      <Route path="/quotes/:quoteId" element={<QuoteDetail />} />
-      <Route path="/new-quote" element={<NewQoute />} />
-    </Routes>
-  </BrowserRouter>,
-  document.getElementById("root")
-);
+ReactDOM.render(<App />, document.getElementById("root"));
