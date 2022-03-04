@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { useParams, Routes, Route } from "react-router-dom";
+import { useParams, Routes, Route, Link } from "react-router-dom";
 import HighlightedQuote from "../components/quotes/HighlightedQuote";
 import Comments from "../components/comments/Comments";
 const DUMMY_DATA = [
@@ -14,10 +14,8 @@ const QuoteDetail = () => {
   }
   return (
     <Fragment>
-      <HighlightedQuote text={quote.id} author={quote.author} />
-      <Routes>
-        <Route path={`/comments`} element={<Comments />} />
-      </Routes>
+      <HighlightedQuote text={quote.text} author={quote.author} />
+      <Link to={`/quotes/${quote.id}/comments`}>comments</Link>
     </Fragment>
   );
 };
